@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.newsContainer{
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: 1100px;
+}
+.newsNav{
+    height: 40px;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    
+
+}
+.searchSection .newsContainer{
+    display: grid;
+    place-items: center;
+    height: 150px;
+}
+.search{
+    padding: 5px 15px;
+    background-color: white;
+    border: 1px solid transparent;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.search:hover{
+    border: 1px solid white;
+    background-color: lightgray;
+}
+.newsHeading{
+    font-size: 30px;
+    color: #696969;
+}
+.first{
+    flex: 50%;
+    display: grid;
+    place-items: center;
+}
+.second{
+ flex: 50%;
+ display: grid;
+ place-items: center;
+}
+.date{
+    font-size: 10px;
+    margin-top: 5px;
+}
+.apTitle{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #0071f2;
+}
+.flexContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.descript{
+    text-align: left;
+    font-size: 15px;
+  
+}
+.readMore{
+    margin-top: 20px;
+    padding: 5px 10px;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border: 1px solid transparent;
+    color: #696969;
+}
+.readMore:hover{
+    color: black;
+    background-color: lightgray;
+}
+.newSection2 .newsContainer{
+    display: grid;
+    place-items: center;
+}
+.btn{
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    margin: 10px;
+    width: 90px;
+    border: transparent;
+    height: 30px;
+
+}
+.btn:hover{
+    background-color: #0071f2;
+    color: white;
+}
+.page{
+    font-size: 12px;
+}
+.loadingSection .newsContainer{
+    display: grid;
+    place-items: center;
+    background-color: blue;
+}
+.errorContainer .newsContainer{
+    display: grid;
+    place-items: center;
+    
+}
+.errorSentence{
+    text-align: center;
+    color:#696969;
+    font-size: 20px;
+}
+@media (max-width:768px) {
+    .flexContainer{
+        flex-direction: column;
+    }
+    .descript{
+        text-align: center;
+    }
+    
+}

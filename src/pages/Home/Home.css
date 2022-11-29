@@ -1,0 +1,184 @@
+@font-face {
+    font-family: "fonty";
+    src: url("../../font/FontsFree-Net-The-Romantic.ttf");
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+.container{
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 0 20px;
+    
+}
+nav{
+    
+    height: 60px;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    align-items: center;
+    
+}
+nav .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    
+    
+}
+.two{
+    color: #0071f2;
+    font-size: 25px;
+    font-family: "fonty";
+}
+.link{
+    margin: 0 12px;
+    text-decoration: none;
+}
+.link:hover{
+    color: #0071f2;
+    scale: 2;
+}
+section .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.section2 .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.section3 .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.title{
+    font-size: 55px;
+    font-weight: bolder;
+    color:  #0071f2;
+    line-height: 1;
+  }
+  .title1{
+    font-size: 55px;
+    font-weight: bolder;
+    color: #0071f2;
+    text-align: right;
+}
+ .paragraph{
+    font-size: 20px;
+    text-align: left;
+    margin-top: 5px;
+    color: #2f2e41;
+    line-height: 1.2;
+ }
+ .paragraph1{
+    font-size: 20px;
+    text-align: right;
+    margin-top: 5px;
+    color: #2f2e41;
+ } 
+ .headingImage{
+    max-width: 600px;
+ }
+ .button{
+  
+    margin-top: 10px;
+    padding: 20px 30px;
+    border-radius: 50px;
+    border: 1px solid #0071f2;
+    color: #2f2e41;
+    background: linear-gradient(90deg, rgba(0,113,242,1) 48%, rgba(0,113,242,1) 48%, rgba(0,212,255,1) 87%);
+    font-size: 18px;
+  
+  }
+  .button:hover{
+    
+    color: white;
+    scale: 1.1;
+  }
+  .icon:hover{
+    color: #0071f2;
+  }
+  .section4 .container{
+    display: grid;
+    place-items: center;
+    
+    
+  }
+  .round{
+    display: grid;
+    place-items: center;
+  }
+  .roundHead{
+    font-size: 55px;
+    color: #0071f2;
+  }
+  .roundParagraph{
+    font-size: 20px;
+    text-align: center;
+  }
+  .section5 .container{
+    height: 200px;
+    background-image: url("../../../public/images/sssurf.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  @media (max-width:768px) {
+    
+    section .container{
+        flex-direction: column;
+    }
+    .section2 .container{
+        flex-direction: column-reverse;
+    }
+    .section3 .container{
+        flex-direction: column;
+    }
+    section .content{
+        display: grid;
+        place-items: center;
+    }
+    .title{
+        text-align: center;
+    }
+    .paragraph{
+        text-align: center;
+    }
+  }
+  @media (max-width:480px) {
+     .headingImage{
+        width: 300px;
+     }
+     .title{
+        font-size: 20px;
+        margin-top: 10px;
+     }
+     .paragraph{
+        font-size: 15px;
+     }
+     .button{
+        padding: 10px 20px;
+        margin-bottom: 10px;
+     }
+     .roundHead{
+        font-size: 30px;
+     }
+     .roundParagraph{
+        font-size: 15px;
+     }
+  }
+  

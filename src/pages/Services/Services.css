@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.serviceContainer{
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: 1100px;
+}
+.serviceNav{
+    height: 40px;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    
+
+}
+.sectionOne .serviceContainer{
+    background-image: url("./../../../public/images/background.jpg");
+    height: 400px;
+    display: grid;
+    place-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+}
+.servicey{
+    display: grid;
+    place-items: center;
+}
+.serviceHeading{
+    color: white;
+    font-size: 55px;
+    text-align: center;
+}
+.paragraphService{
+    color: whitesmoke;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.serviceContact{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 800px;
+    height: 80px;
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.19);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(2.6px);
+-webkit-backdrop-filter: blur(2.6px);
+
+}
+.icony{
+    color: black;
+}
+.icony:hover{
+    color: white;
+}
+.listService{
+    display: flex;
+}
+.listt{
+    display: flex;
+    margin-right: 5px;
+    align-items: center;
+}
+.p{
+    color: white;
+}
+.done{
+    color: green;
+}
+.sectionTwo .serviceContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 300px;
+    margin-top: 15px;
+    
+background: rgba(255, 255, 255, 0.19);
+border-radius: 16px;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.tool{
+    display: grid;
+    place-items: center;
+    height: 200px;
+    width: 300px;
+    
+    padding: 20px;
+    
+
+background: rgba( 255, 255, 255, 0.25 );
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.detaill{
+    text-align: center;
+    color: #696969;
+}
+.line{
+    width: 20px;
+    border: 1px solid #0071f2;
+}
+.sectionThree .serviceContainer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    height: 120px;
+    background-color: whitesmoke;
+    padding: 20px;
+    
+
+background: rgba( 255, 255, 255, 0.25 );
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+.floats{
+    display: grid;
+    place-items: center;
+
+}
+.colorIcon{
+    color: #0071f2;
+}
+.name{
+    color: white;
+    font-size: 18px;
+}
+.intro{
+    color: #696969;
+    text-align: center;
+}
+
+.box1{
+    height: 250px;
+    width: 200px;
+    background-image: url("./../../../public/images/charger2.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    
+}
+.box2{
+    height: 250px;
+    width: 200px;
+    background-image: url("./../../../public/images/cover.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    
+    
+}
+.box3{
+    height: 250px;
+    width: 200px;
+    background-image: url("./../../../public/images/earphone1.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    
+}
+.box4{
+    height: 250px;
+    width: 200px;
+    background-image: url("./../../../public/images/earphone2.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    
+}
+.box5{
+    height: 250px;
+    width: 200px;
+    background-image: url("./../../../public/images/bluetooth.jpg");
+    background-size:cover;
+    border-radius: 10px;
+}
+.box6{
+    height: 250px;
+    width: 200px;
+    background-image: url("./../../../public/images/bluetooth2.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    
+}
+.box7{
+    height: 250px;
+    width: 200px;
+    background-image: url("./../../../public/images/laptop1.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    
+}
+.box8{
+    height: 250px;
+    width: 200px;
+    background-image: url("./../../../public/images/laptop2.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    
+}
+.box9{
+    height: 250px;
+    width: 200px;
+    background-image: url("./../../../public/images/usb\ cable.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    
+}
+.box10{
+    height: 250px;
+    width: 200px;
+    background-image: url("./../../../public/images/earphone2.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    
+}
+
+.introduction{
+    display: grid;
+    place-items: center;
+    margin: 20px 0 ;
+}
+.carousel{
+    margin-top: 20px;
+    background-color: white;
+    
+    border-radius: 10px;
+    
+}
+@media (max-width:768px) {
+    .serviceHeading{
+        font-size: 30px;
+    }
+    .paragraphService{
+        text-align: center;
+    }
+    .serviceContact{
+        width: 500px;
+    }
+    .name{
+        font-size: 15px;
+    }
+    .listService{
+        display: flex;
+        flex-direction: column;
+    }
+    .sectionTwo .serviceContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .sectionThree .serviceContainer{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        height: 220px;
+    }
+}
+@media (max-width:480px) {
+    .serviceHeading{
+        font-size: 20px;
+    }
+    .paragraphService{
+        text-align: center;
+        font-size: 10px;
+    }
+    .serviceContact{
+        width: 200px;
+        display: grid;
+        place-items: center;
+        padding: 20px;
+    }
+    .name{
+        font-size: 12px;
+    }
+    .icony{
+        height: 1px;
+        width: 10px;
+    }
+    .tool{
+        width: 280px;
+    }
+    .detaill{
+        font-size: 12px;
+    }
+    .letters{
+        font-size: 20px;
+    }
+    .let{
+        font-size: 12px;
+        text-align: center;
+    }
+    .intro{
+        font-size: 20px;
+    }
+
+
+}
