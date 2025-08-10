@@ -14,7 +14,7 @@
     height: 40px;
     background-color: white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    
+
 
 }
 .sectionOne .serviceContainer{
@@ -80,7 +80,7 @@ backdrop-filter: blur(2.6px);
     justify-content: space-around;
     min-height: 300px;
     margin-top: 15px;
-    
+
 background: rgba(255, 255, 255, 0.19);
 border-radius: 16px;
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -93,9 +93,9 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     place-items: center;
     height: 200px;
     width: 300px;
-    
+
     padding: 20px;
-    
+
 
 background: rgba( 255, 255, 255, 0.25 );
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -119,7 +119,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     height: 120px;
     background-color: whitesmoke;
     padding: 20px;
-    
+
 
 background: rgba( 255, 255, 255, 0.25 );
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -146,87 +146,6 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     text-align: center;
 }
 
-.box1{
-    height: 250px;
-    width: 200px;
-    background-image: url("./../../../public/images/charger2.jpg");
-    background-size: cover;
-    border-radius: 10px;
-    
-}
-.box2{
-    height: 250px;
-    width: 200px;
-    background-image: url("./../../../public/images/cover.jpg");
-    background-size: cover;
-    border-radius: 10px;
-    
-    
-}
-.box3{
-    height: 250px;
-    width: 200px;
-    background-image: url("./../../../public/images/earphone1.jpg");
-    background-size: cover;
-    border-radius: 10px;
-    
-}
-.box4{
-    height: 250px;
-    width: 200px;
-    background-image: url("./../../../public/images/earphone2.jpg");
-    background-size: cover;
-    border-radius: 10px;
-    
-}
-.box5{
-    height: 250px;
-    width: 200px;
-    background-image: url("./../../../public/images/bluetooth.jpg");
-    background-size:cover;
-    border-radius: 10px;
-}
-.box6{
-    height: 250px;
-    width: 200px;
-    background-image: url("./../../../public/images/bluetooth2.jpg");
-    background-size: cover;
-    border-radius: 10px;
-    
-}
-.box7{
-    height: 250px;
-    width: 200px;
-    background-image: url("./../../../public/images/laptop1.jpg");
-    background-size: cover;
-    border-radius: 10px;
-    
-}
-.box8{
-    height: 250px;
-    width: 200px;
-    background-image: url("./../../../public/images/laptop2.jpg");
-    background-size: cover;
-    border-radius: 10px;
-    
-}
-.box9{
-    height: 250px;
-    width: 200px;
-    background-image: url("./../../../public/images/usb\ cable.jpg");
-    background-size: cover;
-    border-radius: 10px;
-    
-}
-.box10{
-    height: 250px;
-    width: 200px;
-    background-image: url("./../../../public/images/earphone2.jpg");
-    background-size: cover;
-    border-radius: 10px;
-    
-}
-
 .introduction{
     display: grid;
     place-items: center;
@@ -235,10 +154,29 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 .carousel{
     margin-top: 20px;
     background-color: white;
-    
+    padding: 20px;
     border-radius: 10px;
-    
 }
+
+.product-slide {
+    padding: 10px;
+    text-align: center;
+}
+
+.product-image {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-name {
+    font-size: 16px;
+    color: #333;
+}
+
+
 @media (max-width:768px) {
     .serviceHeading{
         font-size: 30px;
@@ -303,6 +241,4 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     .intro{
         font-size: 20px;
     }
-
-
 }

@@ -14,7 +14,7 @@
     height: 40px;
     background-color: white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    
+
 
 }
 .searchSection .newsContainer{
@@ -68,7 +68,7 @@
 .descript{
     text-align: left;
     font-size: 15px;
-  
+
 }
 .readMore{
     margin-top: 20px;
@@ -99,18 +99,23 @@
     background-color: #0071f2;
     color: white;
 }
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
 .page{
     font-size: 12px;
 }
-.loadingSection .newsContainer{
-    display: grid;
-    place-items: center;
-    background-color: blue;
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
 }
 .errorContainer .newsContainer{
     display: grid;
     place-items: center;
-    
+
 }
 .errorSentence{
     text-align: center;
@@ -124,5 +129,5 @@
     .descript{
         text-align: center;
     }
-    
+
 }

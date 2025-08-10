@@ -1,31 +1,30 @@
-
 import './App.css';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Services from './pages/Services/Services';
 import News from './pages/News/News';
+import Contact from './pages/Contact/Contact';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 import {
-  BrowserRouter,
   Routes,
   Route,
-  
 } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-         <BrowserRouter>
-       
+      <Navbar />
+      <main>
         <Routes>
-        <Route path="/" element={
-          <Home/> } />
-         <Route path='About' element={<About/>}/>
-         <Route path='Services' element={<Services/>}/>
-         <Route path='News' element={<News/>}/>
-        
-      </Routes>
-    </BrowserRouter>
-      
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   );
 }

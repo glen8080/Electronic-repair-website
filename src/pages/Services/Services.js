@@ -16,19 +16,22 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import LaptopIcon from '@mui/icons-material/Laptop';
 import Link from '@mui/material/Link';
 import Responsive from './Carousel';
+
 function Services() {
+  const products = [
+    { name: 'Charger', image: '/images/charger2.jpg' },
+    { name: 'Phone Cover', image: '/images/cover.jpg' },
+    { name: 'Earphone', image: '/images/earphone1.jpg' },
+    { name: 'Earphone', image: '/images/earphone2.jpg' },
+    { name: 'Bluetooth Speaker', image: '/images/bluetooth.jpg' },
+    { name: 'Bluetooth Headphone', image: '/images/bluetooth2.jpg' },
+    { name: 'Laptop', image: '/images/laptop1.jpg' },
+    { name: 'Laptop', image: '/images/laptop2.jpg' },
+    { name: 'USB Cable', image: '/images/usb cable.jpg' },
+  ];
+
   return (
     <div>
-         <nav className='serviceNav'>
-            <div className="serviceContainer">
-            <NavLink to="/" >
-                <IconButton>
-                <ArrowBackIosSharpIcon/>
-                </IconButton>
-            </NavLink>
-                
-            </div>
-        </nav>
         <div className="sectionOne">
             <div className="serviceContainer">
                <div className='servicey'>
@@ -39,13 +42,13 @@ function Services() {
                     <p className='name'>Name:Mitundwa Saguda</p>
                      <p className='name'>Phone:+255685637420</p>
                      <div className="social">
-                        
+
                      <Link href="https://www.facebook.com/profile.php?id=100088125702282" target="_blank"  rel="noopener noreferrer"><IconButton><FacebookSharpIcon className='icony'/></IconButton></Link>
-                        
-                        
-                        <Link href="http://www.twitter.com" target="_blank"  rel="noopener noreferrer"><IconButton><TwitterIcon className='icony'/></IconButton></Link>
-                     
-                     
+
+
+                        <Link href="https://twitter.com/mi2tonics" target="_blank"  rel="noopener noreferrer"><IconButton><TwitterIcon className='icony'/></IconButton></Link>
+
+
                       <Link href="https://www.instagram.com/mi2tonics/" target="_blank" rel="noopener noreferrer"><IconButton><InstagramIcon className='icony'/></IconButton></Link>
                      </div>
                 </div>
@@ -123,7 +126,7 @@ function Services() {
                        <h1 className='intro'>But also we have accessories for purchase </h1>
                 </div>
                 <div className="carousel">
-                        <Responsive/>
+                        <Responsive products={products} />
                 </div>
             </div>
         </div>
@@ -131,4 +134,4 @@ function Services() {
   )
 }
 
-export default Services
+export default Services;

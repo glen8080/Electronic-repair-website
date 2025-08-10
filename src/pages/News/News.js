@@ -1,134 +1,129 @@
-import React, { useEffect,  useState } from 'react'
-import { IconButton } from '@mui/material';
-import { NavLink } from 'react-router-dom'
-import ArrowBackIosSharpIcon from '@mui/icons-material/ArrowBackIosSharp';
+import React, { useEffect, useState, useCallback } from 'react';
 import Link from '@mui/material/Link';
-
- import NewError from './NewError';
-
-import "./New.css"
+import ReactLoading from 'react-loading';
+import NewError from './NewError';
+import "./New.css";
 
 function News() {
-   const [search ,setSearch] =useState("bitcoin")
-   const [ store ,setStore] = useState([])
-   const [trigger,setTrigger] = useState("")
-   const [pages,setPage] = useState(1)
-   const [error,setError] = useState(true)
-   const [errorText,setErrorText] = useState(null)
-   
-   
-     
-    const handleNext = () =>{
-        setPage(pages + 1)
-    }
-    const handlePrevious =()=>{
-        setPage(pages-1)
-    }
-   
-   useEffect(()=>{
-      console.log("check twice if ran")
-        
-            const fetchData =()=>{
-                const options = {
-                    method: 'GET',
-                    headers: {
-                        'X-RapidAPI-Key': '777024f3f1mshfb7fcf26d32c819p158d8cjsn8c0613c1db0b',
-                        'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
-                    }
-                };
-                
-                fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=${search}%&pageNumber=${pages}&pageSize=10&autoCorrect=true&fromPublishedDate=null&toPublishedDate=null`, options)
-                    .then(response =>{
-                        if(!response.ok){
-                            setError(false)
-                           throw Error("We could not fetch the data due to some subscription issue,Try later")
-                        }
-                       return   response.json()})
-                    .then(response => 
-                        setStore(response.value)
-                    )
-                    
-                    .catch(err=>setErrorText(err.message));
-               }
-               fetchData()   
-          
-               
-             },[trigger,pages])
+    const [search, setSearch] = useState("");
+    const [query, setQuery] = useState("latest");
+    const [store, setStore] = useState([]);
+    const [page, setPage] = useState(1);
+    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
-   
+    const handleNext = () => {
+        setPage(prevPage => prevPage + 1);
+    };
 
+    const handlePrevious = () => {
+        setPage(prevPage => Math.max(prevPage - 1, 1));
+    };
 
-   const handleChange =(e)=>{
-      setSearch(e.target.value)
-   }
-   const handleSubmit = (e)=>{
-    e.preventDefault()
-    setTrigger(search)
-    setPage(1)
-    
-    
+    const fetchData = useCallback(() => {
+        setIsLoading(true);
+        setError(null);
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
+                'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
+            }
+        };
 
-   }
-  return (
-    <div>
-        <nav className='newsNav'>
-            <div className="newsContainer">
-            <NavLink to="/" >
-                <IconButton>
-                <ArrowBackIosSharpIcon/>
-                </IconButton>
-            </NavLink>
-                
+        fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=${query}&pageNumber=${page}&pageSize=10&autoCorrect=true&fromPublishedDate=null&toPublishedDate=null`, options)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("We could not fetch the data. This might be due to a subscription issue or network problem. Please try again later.");
+                }
+                return response.json();
+            })
+            .then(response => {
+                setStore(response.value || []);
+                if (!response.value || response.value.length === 0) {
+                    setError("No results found for your search.");
+                }
+            })
+            .catch(err => {
+                setError(err.message);
+                setStore([]);
+            })
+            .finally(() => {
+                setIsLoading(false);
+            });
+    }, [query, page]);
+
+    useEffect(() => {
+        fetchData();
+    }, [fetchData]);
+
+    const handleChange = (e) => {
+        setSearch(e.target.value);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setQuery(search || "latest");
+        setPage(1);
+    };
+
+    return (
+        <div>
+            <div className="searchSection">
+                <div className="newsContainer">
+                    <h1 className='newsHeading'>News Search</h1>
+                    <form onSubmit={handleSubmit}>
+                        <input type="text" placeholder='Search for News' onChange={handleChange} value={search} />
+                        <button type='submit' className='search'>Search</button>
+                    </form>
+                    <p className='page'>Page: {page}</p>
+                </div>
             </div>
-        </nav>
-        <div className="searchSection">
-            <div className="newsContainer">
-                <h1 className='newsHeading'>
-                    News Search
-                </h1>
-                <form onSubmit={handleSubmit} >
-                    <input type="text" placeholder='Search for News' onChange={handleChange} value={search}/>
-                     <button type='submit' className='search'>Search</button>
-                     
-                </form>
-                 <p className='page'>Page:{pages}</p>
-            </div>
-        </div>
-    { error ?  <div className="newSection">
-            <div className="newsContainer">
-                {store.map((item,index)=>{
-                    return <div key={index} className="flexContainer">
-                         <div className='first'>
-                            <img src={item.image.url} alt="" style={{height:200,width:290}}/>
-                             <p className='date'>{Date(toString(item.datePublished))}</p> 
 
-                         </div>
-                         <div className='second'>
-                            <div className='apiTitle'>
-                                <p className='apTitle'>{item.title}</p>
+            {isLoading ? (
+                <div className="loading-container">
+                    <ReactLoading type={"spin"} color={"#0071f2"} height={50} width={50} />
+                </div>
+            ) : error ? (
+                <NewError errorText={error} />
+            ) : (
+                <div className="newSection">
+                    <div className="newsContainer">
+                        {store.map((item) => (
+                            <div key={item.id} className="flexContainer">
+                                <div className='first'>
+                                    <img src={item.image?.url || '/images/placeholder.jpg'} alt={item.title} style={{ height: 200, width: 290 }} />
+                                    <p className='date'>{new Date(item.datePublished).toLocaleDateString()}</p>
+                                </div>
+                                <div className='second'>
+                                    <div className='apiTitle'>
+                                        <p className='apTitle'>{item.title}</p>
+                                    </div>
+                                    <div className='description'>
+                                        <p className='descript'>{item.description}</p>
+                                    </div>
+                                    <Link href={item.url} target="_blank" rel="noopener noreferrer">
+                                        <button className='readMore'>Read More</button>
+                                    </Link>
+                                </div>
                             </div>
-                            <div className='description'>
-                                <p className='descript'>{ item.description}</p>
-
-                            </div>
-                           
-                             <Link href={item.url} target="_blank"  rel="noopener noreferrer">  <button className='readMore'>read more</button></Link>
-                         </div>
+                        ))}
                     </div>
-                })}
-            </div>
-        </div>:<NewError errorText={errorText}/>}
-{error && <div className="newSection2">
-            <div className="newsContainer">
-               <div className='buttonContainer'>
-               <button className='btn' onClick={handlePrevious}>Previous</button>
-                <button className='btn' onClick={handleNext}>Next</button>
-               </div>
-            </div>
-        </div>}
-       
-    </div>
-  )
+                </div>
+            )}
+
+            {!isLoading && (
+                <div className="newSection2">
+                    <div className="newsContainer">
+                        <div className='buttonContainer'>
+                            <button className='btn' onClick={handlePrevious} disabled={page === 1}>Previous</button>
+                            <button className='btn' onClick={handleNext}>Next</button>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
 }
 
-export default News
+export default News;
